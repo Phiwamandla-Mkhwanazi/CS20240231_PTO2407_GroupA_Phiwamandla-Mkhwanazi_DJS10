@@ -14,7 +14,7 @@ const App: React.FC = () => {
       {!loading && !error &&
         posts.map(post => (
           <div key={post.id} style={{ marginBottom: '1.5rem' }}>
-            <h2>{post.title}</h2>
+            <h2 className="bg-blue-500 text-white p-4 rounded-lg">{post.title}</h2>
             <p>{post.body}</p>
           </div>
         ))
