@@ -5,20 +5,30 @@ const App: React.FC = () => {
   const { posts, loading, error } = usePosts(1);
 
   return (
-    <div>
-      <h1>Posts</h1>
+    <div className="min-h-screen px-4 py-2 flex flex-col items-center">
+      <h1 className="text-4xl font-bold text-black m-2">Posts</h1>
 
-      {loading && <p>Loading...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {loading && (
+        <p className="text-lg text-black">Loading...</p>
+      )}
 
-      {!loading && !error &&
-        posts.map(post => (
-          <div key={post.id} style={{ marginBottom: '1.5rem' }}>
-            <h2 className="bg-blue-500 text-white p-4 rounded-lg">{post.title}</h2>
-            <p>{post.body}</p>
-          </div>
-        ))
-      }
+      {error && (
+        <p className="text-lg text-black">{error}</p>
+      )}
+
+      {/**Center this at the middle  */}
+      {!loading && !error && (
+        <div className="w-full max-w-4xl mx-auto">
+          {posts.map(post => (
+            <div key={post.id} className="mb-10">
+              <h2 className="text-2xl font-semibold text-black mb-2">
+                {post.title}
+              </h2>
+              <p className="text-black">{post.body}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
