@@ -13,10 +13,9 @@ const App: React.FC = () => {
       )}
 
       {error && (
-        <p className="text-lg text-black">{error}</p>
+        <p className="text-xl text-black font-semibold mt-20">{error}</p>
       )}
 
-      {/**Center this at the middle  */}
       {!loading && !error && (
         <div className="w-full max-w-4xl mx-auto">
           {posts.map(post => (

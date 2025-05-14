@@ -30,7 +30,7 @@ export function usePosts(userId: number) {
         setPosts(data.filter(post => post.userId === userId));
       } catch (err) {
         // In case of an error, set the error state
-        setError('Failed to fetch posts.');
+        setError('Data Fetching Failed');
       } finally {
         // Once the request is complete, set loading to false
         setLoading(false);
