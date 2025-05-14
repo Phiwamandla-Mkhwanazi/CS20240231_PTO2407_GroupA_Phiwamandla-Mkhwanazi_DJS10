@@ -2,7 +2,7 @@ import React from 'react';
 import { usePosts } from './states';
 
 const App: React.FC = () => {
-  const { posts, loading, error } = usePosts(1);
+  const { posts, loading, error } = usePosts(1);  // Fetching posts, loading state, and error from the custom usePosts hook
 
   return (
     <div className="min-h-screen px-4 py-6 flex flex-col items-center bg-white">
